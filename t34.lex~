@@ -1,0 +1,10 @@
+digit [0-9]
+white [\t ] ← t3.lex から「\n」を除いている
+%%
+{digit}+ { return NUM; }
+"+" { return '+'; }
+"(" { return '('; }
+")" { return ')'; }
+"*" { return '*'; }
+"\n" { return ’\n’; } ← 「\n」を返すパターン
+{white} { ; }
